@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import Log from "./Log";
+
 const Header = (props) => {
     return (
         <div className="site-header row d-flex text-center px-4 py-4 fs-4">
@@ -16,6 +18,7 @@ const Header = (props) => {
                     <Link to="/shop" className="pe-3">
                         My Shop
                     </Link>
+                    <Log />
                 </div>
             </div>
         </div>

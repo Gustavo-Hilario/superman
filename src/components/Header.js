@@ -1,8 +1,7 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 
-import Log from "./Log";
+import GoogleLog from "./GoogleLog";
 
 const Header = (props) => {
     return (
@@ -18,7 +17,7 @@ const Header = (props) => {
                     <Link to="/shop" className="pe-3">
                         My Shop
                     </Link>
-                    <Log />
+                    <GoogleLog />
                 </div>
             </div>
         </div>

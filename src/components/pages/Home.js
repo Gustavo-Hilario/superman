@@ -2,7 +2,7 @@ import React from "react";
 
 // Components
 
-import Button from "./Button";
+import Button from "../Button";
 
 const Home = (props) => {
     return (

@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT } from "../actions/types";
+import { SIGN_IN, SIGN_OUT, FETCH_USER_INFO } from "../actions/types";
 
 export const signIn = (userInfo) => {
     return {
@@ -10,5 +10,12 @@ export const signIn = (userInfo) => {
 export const signOut = () => {
     return {
         type: SIGN_OUT,
+    };
+};
+
+export const fetchUserInfo = (userInfo) => {
+    return {
+        type: FETCH_USER_INFO,
+        payload: userInfo,
     };
 };

@@ -83,7 +83,10 @@ class GoogleLog extends React.Component {
             );
         } else {
             return (
-                <a className="btn btn-danger" onClick={this.onGoogleSignOut}>
+                <a
+                    className="btn btn-danger fw-semibold"
+                    onClick={this.onGoogleSignOut}
+                >
                     Google Sign Out
                 </a>
             );
@@ -91,7 +94,6 @@ class GoogleLog extends React.Component {
     };
 
     render() {
-        console.log(this.props);
         // React Fragment will enclose JSX without creating a DOM Element – That might help sometimes when a <div> Like the one we had here is breaking the design
         return <React.Fragment>{this.renderGoogleAuthButton()}</React.Fragment>;
     }

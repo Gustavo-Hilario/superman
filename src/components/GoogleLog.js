@@ -60,31 +60,28 @@ class GoogleLog extends React.Component {
             return;
         } else if (!this.props.isSignedIn) {
             return (
-                <div className="btn btn-primary" onClick={this.onGoogleSignIn}>
+                <a className="btn btn-primary" onClick={this.onGoogleSignIn}>
                     Google Sign In
-                </div>
+                </a>
             );
         } else {
             return (
-                <div className="btn btn-danger" onClick={this.onGoogleSignOut}>
+                <a className="btn btn-danger" onClick={this.onGoogleSignOut}>
                     Google Sign Out
-                </div>
+                </a>
             );
         }
     };
 
     render() {
-        return (
-            <div className="container-fluid">
-                {this.renderGoogleAuthButton()}
-            </div>
-        );
+        // React Fragment will enclose JSX without creating a DOM Element – That might help sometimes when a <div> Like the one we had here is breaking the design
+        return <React.Fragment>{this.renderGoogleAuthButton()}</React.Fragment>;
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        isSignedIn: state.isSignedIn,
+        isSignedIn: state.auth.isSignedIn,
     };
 };
 

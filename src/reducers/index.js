@@ -1,21 +1,11 @@
 import { SIGN_IN, SIGN_OUT } from "../actions/types";
 
-const INITIAL_STATE = {
-    isSignedIn: null,
-    userId: null,
-};
+// COMBINE ALL REDUCERS INTO THIS FILE
+import { combineReducers } from "redux";
 
-export default (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case SIGN_IN:
-            console.log(state);
-            return { ...state, isSignedIn: true, userId: action.payload };
+// IMPORT REDUCERS
+import authReducer from "./authReducer";
 
-        case SIGN_OUT:
-            console.log(state);
-            return { ...state, isSignedIn: false, userId: null };
-
-        default:
-            return state;
-    }
-};
+export default combineReducers({
+    auth: authReducer,
+});

@@ -20,37 +20,31 @@ class Log extends React.Component {
                         this.auth = window.gapi.auth2.getAuthInstance();
 
                         // Add a listener that will return a function whenever the authentication state change
-                        this.auth.isSignedIn.listen(this.onAuthChange);
-
                         this.onAuthChange(this.auth.isSignedIn.get());
+
+                        this.auth.isSignedIn.listen(this.onAuthChange);
                     });
             }
         );
     }
 
     onAuthChange = (isSignedIn) => {
-        // if (!isSignedIn) {
-        //     console.log(this.props);
-        // } else {
-        //     console.log(this.props);
-        // }
+        this.setState({ isSignedIn: isSignedIn });
     };
 
-    onGoogleSignIn = async () => {
+    onGoogleSignIn = () => {
         // return console.log("I Clicked on the Button");
-        await this.auth.signIn();
-
-        this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+        this.auth.signIn();
     };
 
-    onGoogleSignOut = async () => {
-        await this.auth.signOut();
-
-        this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+    onGoogleSignOut = () => {
+        this.auth.signOut();
     };
 
     renderGoogleAuthButton = () => {
-        if (!this.state.isSignedIn || this.state.isSignedIn === null) {
+        if (this.state.isSignedIn === null) {
+            return;
+        } else if (!this.state.isSignedIn) {
             return (
                 <div className="btn btn-primary" onClick={this.onGoogleSignIn}>
                     Google Sign In

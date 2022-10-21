@@ -36,7 +36,24 @@ class GoogleLog extends React.Component {
     onAuthChange = (isSignedIn) => {
         // Modifying the auth state → Using the signIn and signOut functions from the actions that was connected to this component as props via mapStateToProps function
         if (isSignedIn) {
-            return this.props.signIn(this.auth.currentUser.get().getId());
+            // Getting all user information from Google Auth: Method used here 👇
+            //  https://developers.google.com/identity/sign-in/web/reference#auth_setup
+            const user = this.auth.currentUser.get();
+            const userId = user.getId();
+            const BasicProfile = user.getBasicProfile();
+            const UserName = BasicProfile.getName();
+            const UserEmail = BasicProfile.getEmail();
+            const UserProfilePhoto = BasicProfile.getImageUrl();
+
+            const UserInfo = {
+                UserId: userId,
+                UserName: UserName,
+                UserEmail: UserEmail,
+                UserProfilePhoto: UserProfilePhoto,
+            };
+            // console.log(UserInfo);
+
+            return this.props.signIn(UserInfo);
         } else {
             return this.props.signOut();
         }
@@ -74,6 +91,7 @@ class GoogleLog extends React.Component {
     };
 
     render() {
+        console.log(this.props);
         // React Fragment will enclose JSX without creating a DOM Element – That might help sometimes when a <div> Like the one we had here is breaking the design
         return <React.Fragment>{this.renderGoogleAuthButton()}</React.Fragment>;
     }

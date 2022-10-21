@@ -9,13 +9,25 @@ import { fetchUserInfo } from "../actions";
 
 class Header extends React.Component {
     renderHeaderUser = () => {
-        console.log(this.props.userInfo);
         if (this.props.userInfo === null) {
             return (
                 <div className="row align-items-center">
                     <div className="col-md-6">
-                        <div className="site-logo row justify-content-center mb-3">
-                            Site Logo
+                        <div className="site-branding d-flex justify-content-center align-items-center mb-3">
+                            <div className="site-logo">
+                                <img
+                                    src="/images/superman.png"
+                                    style={{ width: "100px", height: "100px" }}
+                                />
+                            </div>
+                            <div className="">
+                                <div className="site-title fw-bolder">
+                                    <Link to="/">Superman</Link>
+                                </div>
+                                <div className="site-tagline fs-6 fw-semibold">
+                                    This is my awesome site!
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="site-menu col-md-6 d-flex justify-content-center">
@@ -33,8 +45,21 @@ class Header extends React.Component {
             return (
                 <div className="row align-items-center">
                     <div className="col-md-3">
-                        <div className="site-logo row justify-content-center mb-3">
-                            Site Logo
+                        <div className="site-branding d-flex justify-content-center align-items-center mb-3">
+                            <div className="site-logo">
+                                <img
+                                    src="/images/superman.png"
+                                    style={{ width: "100px", height: "100px" }}
+                                />
+                            </div>
+                            <div className="">
+                                <div className="site-title fw-bolder">
+                                    <Link to="/">Superman</Link>
+                                </div>
+                                <div className="site-tagline fs-6 fw-semibold">
+                                    This is my awesome site!
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="site-menu col-md-6 d-flex justify-content-center">
@@ -47,9 +72,11 @@ class Header extends React.Component {
                     </div>
                     <div className="col-md-3 d-flex justify-content-center align-items-center gap-3 ">
                         {/* Getting Google Profile image from Google! It was necessary to add the referrerpolicy property. I was getting as 403 error */}
-                        <p className="mb-0 fw-semibold">
-                            {this.props.userInfo.UserName.split(" ")[0]}
-                        </p>
+                        <Link to="/my-account">
+                            <p className="mb-0 fw-semibold">
+                                {this.props.userInfo.UserName.split(" ")[0]}
+                            </p>
+                        </Link>
                         <Link to="/my-account">
                             <img
                                 src={this.props.userInfo.UserProfilePhoto}

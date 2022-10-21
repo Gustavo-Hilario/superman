@@ -4,7 +4,7 @@ const MyAccount = () => {
     return (
         <div className="container-fluid">
             <h1 className="display-4 text-center fw-semibold">
-                My React Shop!
+                My Account Page!
             </h1>
         </div>
     );

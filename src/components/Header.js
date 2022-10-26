@@ -15,10 +15,15 @@ class Header extends React.Component {
                     <div className="col-md-6">
                         <div className="site-branding d-flex justify-content-center align-items-center mb-3">
                             <div className="site-logo">
-                                <img
-                                    src="/images/superman.png"
-                                    style={{ width: "100px", height: "100px" }}
-                                />
+                                <Link to="/">
+                                    <img
+                                        src="/images/superman.png"
+                                        style={{
+                                            width: "100px",
+                                            height: "100px",
+                                        }}
+                                    />
+                                </Link>
                             </div>
                             <div className="">
                                 <div className="site-title fw-bolder">
@@ -34,8 +39,8 @@ class Header extends React.Component {
                         <Link to="/" className="pe-3">
                             Home
                         </Link>
-                        <Link to="/shop" className="pe-3">
-                            My Shop
+                        <Link to="/wpcom" className="pe-3">
+                            WordPress.com
                         </Link>
                         <GoogleLog />
                     </div>
@@ -66,8 +71,8 @@ class Header extends React.Component {
                         <Link to="/" className="pe-3">
                             Home
                         </Link>
-                        <Link to="/shop" className="pe-3">
-                            My Shop
+                        <Link to="/wpcom" className="pe-3">
+                            WordPress.com
                         </Link>
                     </div>
                     <div className="col-md-3 d-flex justify-content-center align-items-center gap-3 ">
@@ -81,7 +86,7 @@ class Header extends React.Component {
                             <img
                                 src={this.props.userInfo.UserProfilePhoto}
                                 referrerPolicy="no-referrer"
-                                className="rounded-circle"
+                                className="rounded-circle profile-img"
                                 width="48px"
                                 height="48px"
                             />

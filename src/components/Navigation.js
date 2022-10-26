@@ -6,7 +6,7 @@ import history from "./history";
 // Components
 
 import Home from "./pages/Home";
-import Shop from "./pages/Shop";
+import WPCom from "./pages/WPCom";
 import MyAccount from "./pages/MyAccount";
 import Header from "./Header";
 
@@ -17,7 +17,7 @@ const Navigation = (props) => {
                 <Header></Header>
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/shop" exact component={Shop} />
+                    <Route path="/wpcom" exact component={WPCom} />
                     <Route path="/my-account" exact component={MyAccount} />
                 </Switch>
             </Router>

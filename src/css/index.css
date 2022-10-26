@@ -49,10 +49,21 @@ button:hover {
     background-color: var(--bg-color);
 }
 
+.profile-img {
+    border: 2px solid var(--text-color);
+    opacity: 0.7;
+    transition: border 0.3s, opacity 0.3s;
+}
+
+.profile-img:hover {
+    border-width: 2px;
+    opacity: 1;
+}
+
 /* Footer */
 
 .site-footer {
     background-color: var(--bg-color);
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }

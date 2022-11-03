@@ -13,7 +13,7 @@ class GoogleLog extends React.Component {
                 window.gapi.auth2
                     .init({
                         client_id:
-                            "253405588288-v3bk5emgtlr1prpte36q6dssogi6jhr1.apps.googleusercontent.com",
+                            "575182359447-mf6pda6uujpdl1fo1tui7hile16on5jr.apps.googleusercontent.com",
                         scope: "email",
                         plugin_name: "superman",
                     })

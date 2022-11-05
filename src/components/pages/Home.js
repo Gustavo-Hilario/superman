@@ -2,8 +2,8 @@ import React from "react";
 import { WPCOMSite } from "../../apis/wpCOM";
 
 // Components
-
 import Button from "../Button";
+import ContentHeader from "../ContentHeader";
 
 class Home extends React.Component {
     state = { searchPostsTerm: "gustavohilario.com", posts: [] };
@@ -94,9 +94,12 @@ class Home extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <h1 className="display-5 text-center fw-semibold">
-                    Find WordPress.com Posts
-                </h1>
+                <ContentHeader
+                    title="Find WordPress.com Posts"
+                    titleClasses="display-4 text-center fw-semibold"
+                    author="Gustavo Hilario"
+                    authorRole="Happiness Engineer"
+                />
 
                 {/* Controlling Search Post Submit */}
                 <form className="mb-5" onSubmit={this.onWPComPostsSearch}>

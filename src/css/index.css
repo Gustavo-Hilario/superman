@@ -37,6 +37,20 @@ button:hover {
     color: var(--link-color);
 }
 
+hr {
+    border-top: 2px solid var(--text-color);
+    opacity: 1;
+    margin: 1rem auto;
+}
+
+hr.hr-short {
+    width: 50%;
+}
+
+hr.hr-shorter {
+    width: 25%;
+}
+
 /* Page */
 
 .page-main {
@@ -58,6 +72,13 @@ button:hover {
 .profile-img:hover {
     border-width: 2px;
     opacity: 1;
+}
+
+/* Sidebar */
+
+.sidebar {
+    height: auto;
+    min-height: 100%;
 }
 
 /* Footer */

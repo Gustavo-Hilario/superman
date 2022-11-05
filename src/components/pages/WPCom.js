@@ -2,6 +2,11 @@ import React from "react";
 
 import { WPCOMAuth } from "../../apis/wpCOM";
 
+// Components
+
+import Sidebar from "../Sidebar";
+import ContentHeader from "../ContentHeader";
+
 const clientId = 81668;
 const clientSecret =
     "62sRrYEaiaGXMMYqldOXvmM3ApnYP6wVRmTSINwX3hYvNqTYgrwdQpeRdmlFR20z";
@@ -27,12 +32,23 @@ class WPCom extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <h1 className="display-4 text-center fw-semibold">
-                    WordPress.com API
-                </h1>
-                <button className="btn btn-primary" onClick={this.WPComAPI}>
-                    WordPress.com
-                </button>
+                <ContentHeader
+                    title="WordPress.com API"
+                    titleClasses="display-4 text-center fw-semibold"
+                    author="Gustavo Hilario"
+                    authorRole="Happiness Engineer"
+                />
+                <div className="row">
+                    <div className="col-md-8">
+                        <button
+                            className="btn btn-primary"
+                            onClick={this.WPComAPI}
+                        >
+                            WordPress.com
+                        </button>
+                    </div>
+                    <Sidebar colsize="col-md-4" />
+                </div>
             </div>
         );
     }

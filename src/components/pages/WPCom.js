@@ -44,7 +44,7 @@ class WPCom extends React.Component {
                             className="btn btn-primary"
                             onClick={this.WPComAPI}
                         >
-                            WordPress.com
+                            WordPress.com Authentication
                         </button>
                     </div>
                     <Sidebar colsize="col-md-4" />

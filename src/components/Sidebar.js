@@ -8,6 +8,7 @@ class Sidebar extends React.Component {
                 style={{ backgroundColor: "var(--bg-color)" }}
             >
                 <h1>Sidebar</h1>
+                <p>Create and add content here</p>
             </div>
         );
     }

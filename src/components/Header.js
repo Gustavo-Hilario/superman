@@ -65,6 +65,9 @@ class Header extends React.Component {
                     <Link to="/wpcom" className="pe-3">
                         WordPress.com
                     </Link>
+                    <Link to="/mylist" className="pe-3">
+                        MyList
+                    </Link>
                 </div>
             );
         }

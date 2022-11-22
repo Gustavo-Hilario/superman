@@ -20,9 +20,9 @@ export const fetchUserInfo = (userInfo) => {
     };
 };
 
-export const createMyList = (formValues) => (dispatch) => {
-    dispatch({
+export const createMyList = (formValues) => {
+    return {
         type: "CREATE_A_LIST",
         payload: formValues,
-    });
+    };
 };

@@ -27,7 +27,11 @@ class MyList extends React.Component {
     }
 }
 
+const mapStateToProps = (state, ownProps) => {
+    console.log(state);
+};
+
 export default connect(
-    null,
+    mapStateToProps,
     /**should be between brackets { } **/ { createMyList }
 )(MyList);

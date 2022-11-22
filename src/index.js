@@ -6,7 +6,7 @@ import App from "./components/App";
 // REDUX
 import reducers from "./reducers";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware } from "redux";
 // Importing Redux thunk …
 // This should help with returning functions from actions creators
 

@@ -19,3 +19,10 @@ export const fetchUserInfo = (userInfo) => {
         payload: userInfo,
     };
 };
+
+export const createMyList = (formValues) => (dispatch) => {
+    dispatch({
+        type: "CREATE_A_LIST",
+        payload: formValues,
+    });
+};

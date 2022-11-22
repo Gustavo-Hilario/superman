@@ -4,6 +4,9 @@ import React from "react";
 // By importing this some props are added to the component including HandleSubmit
 import { reduxForm, Field } from "redux-form";
 
+// Action Creator → Handling form submission
+// import { createMyList } from "../actions";
+
 class ListForm extends React.Component {
     componentDidMount() {
         console.log(this.props);
@@ -11,6 +14,7 @@ class ListForm extends React.Component {
 
     // Rendering the Components that will replace the Field Components
     renderFieldInput = ({ input, label, meta, type, id }) => {
+        // console.log(this.props);
         const className = {
             container: "mb-3",
             label: "form-label fw-bolder",
@@ -75,7 +79,7 @@ class ListForm extends React.Component {
         // e.preventDefault();
 
         console.log(formValues);
-        this.props.submit(formValues);
+        this.props.onSubmit(formValues);
     };
 
     render() {
@@ -127,7 +131,7 @@ const validate = (formValues) => {
         errors.title = "Enter the content!!";
     }
 
-    return console.log(errors);
+    return errors;
 };
 
 export default reduxForm({ form: "listForm", validate })(ListForm);
